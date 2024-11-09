@@ -34,6 +34,9 @@ clear-doctrine:
 schema-update:
 	$(EXEC_SERVER) php bin/console doctrine:schema:update --force
 
+controllerM:
+	$(EXEC_SERVER) php bin/console make:controller
+
 install-assets:
 	$(EXEC_SERVER) php bin/console assets:install --symlink public
 

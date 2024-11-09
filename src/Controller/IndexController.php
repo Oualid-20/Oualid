@@ -14,15 +14,15 @@ class IndexController extends AbstractController
         return new Response(content: "Hello World !");
     }
     
-    #[Route('/contact', name: 'app_contact')]
-    public function contact(): Response
+    #[Route('/contact/{name}', name: 'app_contact')]
+    public function contact(string $name = "Anonymous"): Response
     {
-        return new Response(content: "La page contact");
+        return new Response(content: "La page contact  $name");
     }
 
-    #[Route('/adress', name: 'app_adress')]
-    public function adress(): Response
+    #[Route('/adress/{num}', name: 'app_adress', requirements:['num' => '\d+'])]
+    public function adress(string $num="Pas de num"): Response
     {
-        return new Response(content: "La page Adress");
+        return new Response(content: "La page Adress $num");
     }
 }
