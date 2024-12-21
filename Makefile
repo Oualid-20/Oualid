@@ -37,6 +37,12 @@ schema-update:
 controllerM:
 	$(EXEC_SERVER) php bin/console make:controller
 
+entityM:
+	$(EXEC_SERVER) php bin/console make:entity
+
+formM:
+	$(EXEC_SERVER) php bin/console make:form
+
 install-assets:
 	$(EXEC_SERVER) php bin/console assets:install --symlink public
 
